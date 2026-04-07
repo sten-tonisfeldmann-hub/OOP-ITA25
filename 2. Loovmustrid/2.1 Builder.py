@@ -1,14 +1,24 @@
 class CodeBuilder:
-    def __init__(self, person):
-        self.person = person
+    def __init__(self, class_name):
+        self.class_name = class_name
         self.fields = []
 
-    def add_field(self, name, age):
-        self.fields.append((age, name))
+    def add_field(self, name, value):
+        self.fields.append((name, value))
         return self
 
     def __str__(self):
-        return f"His fields are {self.fields}."
+        res = [f"class {self.class_name}:"]
+
+        res.append("  def __init__(self):")
+
+        if not self.fields:
+            res.append("    pass")
+        else:
+            for name, value in self.fields:
+                res.append(f"    self.{name} = {value}")
+
+        return "\n".join(res)
 
 
 if __name__ == '__main__':
