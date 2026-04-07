@@ -9,15 +9,12 @@ class CodeBuilder:
 
     def __str__(self):
         res = [f"class {self.class_name}:"]
-
         res.append("  def __init__(self):")
-
         if not self.fields:
             res.append("    pass")
         else:
             for name, value in self.fields:
                 res.append(f"    self.{name} = {value}")
-
         return "\n".join(res)
 
 
