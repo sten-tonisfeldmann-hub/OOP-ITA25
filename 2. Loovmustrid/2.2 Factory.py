@@ -15,9 +15,9 @@ class PersonFactory:
 if __name__ == '__main__':
     factory = PersonFactory()
 
-    p1 = factory.create_person("Anna")
-    p2 = factory.create_person("Mark")
-    p3 = factory.create_person("Johannes")
+    p1 = factory.create_person("Gilbert")
+    p2 = factory.create_person("SAXO VTS")
+    p3 = factory.create_person("Kebabrber")
 
     print(f"{p1.id} {p1.name}")
     print(f"{p2.id} {p2.name}")
